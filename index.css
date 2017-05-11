@@ -1,0 +1,75 @@
+html{
+	font-size: 200%;
+}
+body{
+	margin: 0;
+	font-family: san-serif;
+	font-size: 100%;
+}
+#nav-bar{
+	position: fixed;
+	width: 100%; 
+	height: 5rem;<!-- other method of measurement include em, rem, and px -->
+<!-- could also do the #iiiiii, where i are numbers between 0 and 255; another way would be rgb(i,i,i); additionally, rgba(i,i,i,a) where a is a number between 
+0 and 255 which dictates the trasperancy of the color-->
+	background-color: #000;
+	text-align: center;<!-- options: left, right, center -->
+	z-index: 1;
+}
+
+#nav-bar > span{
+	position: relative;
+	color: white;
+	line-height: 2.8rem;
+	width: 8rem;
+	font-size: 150%;
+	cursor: pointer;
+	background-color: black;
+	display: inline-block;
+	/*border: 2px solid transparent;
+	border-bottom-color: red;*/
+}
+#nav-bar > span::before{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+//	top: 0;
+	width: 8rem;
+	height: 0.2rem;
+	background-color: white;
+	content: "";
+}
+#nav-bar > span:hover::before{
+	background-color: red;
+}
+#content{
+	position: absolute;
+	top: 3rem;
+	left: 0;
+	right: 0;
+}
+#content > div {
+	position: absolute; 
+	padding: 0.5rem; <!-- margin == outside; padding == inside -->
+	top: 1rem;
+	width: calc(100% - 3rem);
+	height: 60rem;
+	background-color: beige;
+	transition: all 1s;
+}
+#content.blog #blog{
+	left: 1rem;
+	
+}
+#content.blog #bio{
+	left: calc(100% + 1rem);
+	
+}
+#content.bio #blog{
+	left: calc(100% + 1rem);
+	
+}
+#content.bio #bio{
+	left: calc(1rem + 1rem);
+	
+}
