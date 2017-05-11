@@ -1,6 +1,6 @@
 var blogEntries = [
 	{
-		title: "Monday";
+		title: "Monday",
 		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras finibus ut augue elementum molestie. Nulla mattis neque vitae orci bibendum tincidunt. Nulla in congue metus, porttitor ullamcorper dolor. Fusce mollis ligula vel commodo convallis. Pellentesque ultrices accumsan nisi non luctus. Pellentesque ex mauris, pellentesque quis aliquet in, consequat quis urna. Vivamus sed condimentum metus. Mauris vel magna non ex fermentum mollis. Vivamus eget urna iaculis, ultrices quam eget, semper felis. Nam ullamcorper, ante et tincidunt fringilla, felis enim scelerisque ligula, venenatis euismod neque risus sit amet lectus. Maecenas lacinia enim non nisi viverra, vel dapibus urna mollis. Praesent nisi sem, scelerisque in nisi vitae, fringilla lacinia sem. Fusce mollis porttitor tempus. Duis odio elit, sollicitudin in urna non, interdum egestas libero. Nam a pellentesque nisl, et dapibus augue. Aenean quis sem et metus egestas interdum ut eu nisi. "
 	
 		
@@ -15,7 +15,7 @@ var blogEntries = [
 	}
 ]
 function loadBlog(){
-	var blog=documet.getElementById("blog");
+	var blog=document.getElementById("blog");
 for(var i = 0; i < blogEntries.length; i++){
 		var title = document.createElement("h2");
 		title.innerHTML = blogEntries[i].title;
@@ -24,12 +24,12 @@ for(var i = 0; i < blogEntries.length; i++){
 		text.innerHTML = blogEntries[i].text;
 		blog.appendChild(text);
 	}
+	goto('blog');
 }
-goto('blog');
-<!-- alternative to this, at least for this example, would be (function ...)(); -->
+//alternative to this, at least for this example, would be (function ...)(); 
 window.onreadystatechange = loadBlog(); 
 
-function goto(sectioon){
+function goto(section){
 	var content = document.getElementById("content");
 	content.className = "";
 	content.classList.add(section);
